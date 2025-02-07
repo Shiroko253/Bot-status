@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub</title>
+    <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg" />
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../../images/site.webmanifest" />
+    <link rel="stylesheet" href="12-16-2024.css">
+</head>
+<body>
+    <header>
+        <img src="../../images/usericon.png" alt="我的個人頭像" class="user-icon">
+        <h1>12-16-2024</h1>
+        <div id="time-display">時間: <span id="current-time"></span></div>
+    </header> 
+    <nav>
+        <ul>
+            <li><a href="../daily.html">返回日常頁面</a></li>
+            <li><a href="../../index.html">返回主頁</a></li>
+            <li><a href="12-23-2024.html">前往下一個日常</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>
+            <h2>關於幽幽子機器人停止更新和開發</h2>
+            <p>
+                實際上原因也是很簡單的。當時我也是爲了五年前的自己，
+                打算說做一個我自己獨一無二的機器人。後來發現，我還是太天真了。
+            </p>
+            <p>
+                所以，我打算封存我的零號計劃，之後再打算看看有沒有穩定的職業和能力，
+                來再做出打算繼續開發和持續更新吧。
+            </p>
+        </section>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateTime, 1000);
+    </script>    
+
+</body>
+</html>

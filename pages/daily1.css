@@ -1,0 +1,199 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/daily-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #36393f;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: calc(100% - 200px);
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+header .user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    flex-shrink: 0;
+}
+
+header #time-display {
+    font-size: 0.9em;
+    margin-left: auto;
+    padding-left: 10px;
+    min-width: unset;
+    max-width: 150px;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+.shop-button {
+    background-color: #ff5722;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1em;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+    margin: 10px 15px;
+}
+
+.shop-button:hover {
+    background-color: #e64a19;
+}
+
+.button-icon {
+    width: 20px;
+    height: 20px;
+}
+
+main {
+    padding: 100px 20px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-left: 220px;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+main .text-content {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: center;
+}
+
+.card-slider {
+    position: relative;
+    overflow: auto;
+    margin: 20px 0;
+    background-color: white;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    max-height: 500px;
+}
+
+.slider-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+}
+
+.card {
+    min-width: 100%;
+    min-height: 150px;
+    padding: 20px;
+    background-color: #f1f1f1;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card:hover {
+    background-color: #e0f7fa;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.card h3 {
+    margin: 12px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.card h4 {
+    margin: 10px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.card h5 {
+    margin: 8px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
+.prev-btn, .next-btn {
+    display: none;
+}

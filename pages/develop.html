@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub - 機器人更新進度</title>
+    <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/site.webmanifest" />
+    <link rel="stylesheet" href="develop1.css">
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <img src="../images/boticon.png" alt="機器人圖標" class="bot-icon">
+            <h1>零號計劃 - Discord 機器人更新進度</h1>
+            <div id="time-display">時間: <span id="current-time"></span></div>
+        </div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="../index.html">首頁</a></li>
+            <li><a href="about-bot.html">關於機器人</a></li>
+            <li><a href="contact.html">聯絡方式</a></li>
+            <li><a href="develop.html">開發進度</a></li>
+            <li><a href="daily.html">日常</a></li>
+        </ul>
+    </nav>    
+    <main>
+        <section id="updates">
+            <h2>更新進度</h2>
+            <div id="latest-update">
+                <h3>最新版本：v5.3.0</h3>
+                <p>更新日期：2024-12-7</p>
+                <ul>
+                    <li>把部分的東西修好了</li>
+                    <li>將原有使用的庫改爲pycord</li>
+                </ul>
+                <img src="../images/update-image.gif" alt="更新示例圖片" class="update-image">                
+                <div class="progress-bar">
+                    <div class="progress"></div>
+                </div>
+                <p>進度：100%</p>
+            </div>
+            <div class="button-container">
+                <a href="https://discord.com/oauth2/authorize?client_id=852046004550238258&permissions=15&scope=bot" target="_blank" class="invite-button" rel="noopener">
+                    點擊我邀請機器人加入到你的伺服器
+                    <img src="../images/boticon.png" alt="邀請機器人">
+                </a>
+                <a href="https://shoplnk.me/YSGStore?_tab=0#tab-0" target="_blank" class="extra-button" rel="noopener">
+                    <img src="../images/YSGicon.png" alt="前往YSG商店" class="button-icon">點擊我前往YSG小店
+                </a>
+            </div>
+        </section>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

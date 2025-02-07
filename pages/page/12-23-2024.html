@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub</title>
+    <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg" />
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../../images/site.webmanifest" />
+    <link rel="stylesheet" href="12-23-2024.css">
+</head>
+<body>
+    <header>
+        <img src="../../images/usericon.png" alt="我的個人頭像" class="user-icon">
+        <h1>12-23-2024</h1>
+        <div id="time-display">時間: <span id="current-time"></span></div>
+    </header>
+    <nav>
+        <ul>  
+            <li><a href="12-16-2024.html">前往上一個日常</a></li>
+            <li><a href="../daily.html">返回日常頁面</a></li>
+            <li><a href="../../index.html">返回主頁</a></li>
+            <li><a href="12-24-2024.html">前往下一個日常</a></li>
+        </ul>
+    </nav>
+    <main> 
+        <section> 
+            <h2>
+                這個是一個普通的日常
+            </h2> 
+        <p> 
+            可能就是一個普通的日常而已吧
+            <br> 如果你是這樣覺得的話你就錯了
+            <br>
+            <br>早上好
+            <br>中午好
+            <br>晚上好
+            <br>我是Miya253
+            <br>沒錯 這個是測試的頁面 目前呢還在想著要幹嘛 
+            <br>不過現在有一部分突破的進展
+        </p> 
+        <button class="fake-button" onclick="rickroll()"> 
+            點擊我查看Miya的最新突破的進展 
+        </button>
+        </section>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        
+        setInterval(updateTime, 1000);
+
+        function rickroll() {
+            alert("你在等等呀~ 先別急嘛");
+            setTimeout(() => {
+                window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank");
+            }, 2000);
+        }
+
+    </script>
+</body>
+</html>

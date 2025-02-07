@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub</title>
+    <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg" />
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../../images/site.webmanifest" />
+    <link rel="stylesheet" href="12-24-2024.css">
+</head>
+<body>
+    <header>
+        <img src="../../images/usericon.png" alt="我的個人頭像" class="user-icon">
+        <h1>12-24-2024</h1>
+        <div id="time-display">時間: <span id="current-time"></span></div>
+    </header>
+    <nav>
+        <ul>  
+            <li><a href="12-23-2024.html">前往上一個日常</a></li>
+            <li><a href="../daily.html">返回日常頁面</a></li>
+            <li><a href="../../index.html">返回主頁</a></li>
+        </ul>
+    </nav>
+    <main> 
+        <section> 
+            <h2>
+                關於工作完成并且正在寫網頁的我
+            </h2> 
+        <p> 
+            問了一下Ai就是DiscordBot似乎不能在我的個人網頁是否在綫和不在綫
+            <br>難過了 老哥
+            <br>不過難得聖誕節 那就 祝大家聖誕快樂
+            <br>
+            <br>是説 你模擬宇宙是不是還沒打 快去打完他
+            <br>免費的石頭不拿白不拿
+            <br>...
+            <br>
+            <br> 你遇見了一個“未知”的寶可夢 是否抓捕
+        </p>
+        <p>
+            是説 我怎麽還沒醒來呢...?
+        </p>
+        </section>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        
+        setInterval(updateTime, 1000);
+    </script>
+</body>
+</html>

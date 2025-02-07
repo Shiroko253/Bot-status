@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub - 關於機器人</title>
+    <link rel="stylesheet" href="about-bot1.css">
+    <script>
+        function updateTime() {
+            const timeElement = document.querySelector(".time");
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, '0');
+            const minutes = String(now.getMinutes()).padStart(2, '0');
+            const seconds = String(now.getSeconds()).padStart(2, '0');
+            timeElement.textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateTime, 1000);
+    </script>
+    <link rel="icon" type="image/png" href="../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../images/favicon.svg" />
+    <link rel="shortcut icon" href="../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../images/site.webmanifest" />
+</head>
+<body onload="updateTime()">
+    <div class="container">
+        <header>
+            <div class="title">關於機器人</div>
+            <div class="time">--:--:--</div>
+        </header>
+        <aside class="right-section">
+            <img src="../images/usericon.png" alt="用戶頭像" class="avatar">
+            <img src="../images/boticon.png" alt="機器人頭像" class="bot-avatar">
+            <a href="https://shoplnk.me/YSGStore?_tab=0#tab-0" class="shop-btn">
+                <img src="../images/YSGicon.png" alt="商店圖標" class="shop-icon"> 點擊我前往YSG的小店
+            </a>
+        </aside>
+        <nav class="sidebar">
+            <a href="../index.html" class="button">首頁</a>
+            <a href="about-bot.html" class="button">關於機器人</a>
+            <a href="contact.html" class="button">聯絡方式</a>
+            <a href="develop.html" class="button">開發進度</a>
+            <a href="daily.html" class="button">日常</a>
+            <div class="social-links">
+                <a href="https://discord.gg/JDE9TrUsbf" target="_blank" class="button" rel="noopener">DC</a>
+                <a href="https://www.instagram.com/miya_2530_/" target="_blank" class="button" rel="noopener">IG</a>
+                <a href="https://github.com/xuemeng1987" target="_blank" class="button" rel="noopener">GitHub</a>
+            </div>
+        </nav>
+        <main>
+            <section id="Discord-Bot-Info">
+                <h1>關於機器人幽幽子</h1>
+                <p class="text-content">
+                    關於機器人幽幽子，我想很多人可能不知道他是做什麼的吧。機器人幽幽子主要用於一些小型伺服器，作為保護功能（還在開發中）。我從三年前開始創建這個機器人，主要是為了自娛自樂 :p
+                </p>                
+                <h2>關於他的指令和功能</h2>                
+                <h3>通用指令 (General Commands)</h3>
+                <ul class="command-list">
+                    <li>/invite - 獲取機器人的邀請鏈接</li>
+                    <li>/ping - 查看機器人和伺服器的延遲</li>
+                    <li>/time - 機器人待機時間</li>
+                    <li>/trivia - 啟動動漫問答挑戰</li>
+                    <li>/feedback - 回報錯誤或問題</li>
+                </ul>
+                <h3>管理員指令 (Admin Commands)</h3>
+                <ul class="command-list">
+                    <li>/ban - 禁止用户进入服务器（僅限管理員）</li>
+                    <li>/kick - 踢出服务器用户（僅限管理員）</li>
+                    <li>/clear - 清理訊息（僅限管理員）</li>
+                    <li>/start_giveaway - 開始抽獎活動（僅限管理員）</li>
+                </ul>
+                <h3>用戶和伺服器信息 (User and Server Info)</h3>
+                <ul class="command-list">
+                    <li>/server_info - 提供伺服器信息</li>
+                    <li>/user_info - 提供用戶信息</li>
+                </ul>
+                <h3>正在製作和測試中的功能</h3>
+                <p class="text-content">
+                    RPG 地下城冒险功能仍在开发中，敬请期待。
+                </p>
+                <h4>邀請機器人</h4>
+                <p class="text-content">
+                    <a href="https://discord.com/oauth2/authorize?client_id=852046004550238258&permissions=15&scope=bot" target="_blank" rel="noopener">點擊此文字邀請幽幽子</a>
+                </p>
+                <div class="image-section">
+                    <img src="../images/yuyuko.gif" alt="幽幽子的圖片">
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub</title>
+    <link rel="icon" type="image/png" href="images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <link rel="shortcut icon" href="images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png" />
+    <link rel="manifest" href="images/site.webmanifest" />
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <img src="images/usericon.png" alt="我的個人頭像" class="user-icon">
+        <h1>關於我</h1>
+        <div id="time-display">時間: <span id="current-time"></span></div>
+    </header> 
+    <nav>
+        <ul>
+            <li><a href="index.html">首頁</a></li>
+            <li><a href="pages/about-bot.html">關於機器人</a></li>
+            <li><a href="pages/contact.html">聯絡方式</a></li>
+            <li><a href="pages/develop.html">開發進度</a></li>
+            <li><a href="pages/daily.html">日常</a></li>
+            <li>
+                <button class="shop-button" onclick="window.location.href='https://shoplnk.me/YSGStore?_tab=0#tab-0'">
+                    <img src="images/YSGicon.png" alt="YSG小商店" class="button-icon">
+                    點擊前往 YSG 小商店
+                </button>
+            </li>
+        </ul>
+    </nav>    
+    <main>
+        <h2>關於我</h2>
+        <p class="text-content">
+            嗨，一個普通的人，也是 <a href="https://discord.com/oauth2/authorize?client_id=852046004550238258&permissions=15&scope=bot" target="_blank" rel="noopener">幽幽子</a> 的製作者 <a href="https://github.com/xuemeng1987" target="_blank" rel="noopener">Miya253</a>。
+            關於幽幽子... 其實就是腦熱做出來想説不可能會有特別的機器人吧...
+        </p>
+        <p class="text-content">
+            至於 “幽幽子” 這個名字老實説就是在Pivix看到的一個很可愛的一個粉色小女孩就是這樣
+        </p>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+        setInterval(updateTime, 1000);
+    </script>    
+</body>
+</html>

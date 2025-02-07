@@ -1,0 +1,213 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.header-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    max-width: 900px;
+}
+
+.bot-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+h1 {
+    font-size: 2em;
+    color: #61dafb;
+    flex-grow: 1;
+}
+
+#time-display {
+    margin-left: auto;
+    font-size: 1rem;
+    color: #ffffff;
+    margin-left: 20px;
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: #333;
+    padding: 20px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 15px 0;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.1em;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: #87ceeb;
+}
+
+main {
+    margin-left: 220px;
+    width: calc(100% - 220px);
+    max-width: 800px;
+    background: #3a3f47;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.progress-bar {
+    background-color: #555;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+    position: relative;
+}
+
+.progress {
+    height: 10px;
+    width: 100%;
+    background-color: #61dafb;
+    animation: rgbRunning 2s infinite linear;
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+button, .invite-button, .extra-button {
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #61dafb;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}
+
+button:hover, .invite-button:hover, .extra-button:hover {
+    background-color: #529dcc;
+}
+
+.extra-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #ff914d;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.extra-button:hover {
+    background-color: #e5773e;
+}
+
+.button-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.invite-button {
+    display: inline-flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 1em;
+    color: #ffffff;
+    background-color: #585858;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+    text-align: center;
+    text-decoration: none;
+}
+
+.invite-button img {
+    width: 30px;
+    height: auto;
+    margin-left: 8px;
+}
+
+.invite-button:hover {
+    background-color: #4752c4;
+}
+
+#time-display {
+    font-size: 1rem;
+    margin-left: auto;
+}
+
+@media (max-width: 768px) {
+    nav {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+    }
+    main {
+        margin-left: 0;
+    }
+}
+
+@keyframes rgbRunning {
+    0% {
+        background-color: rgb(255, 0, 0);
+    }
+    33% {
+        background-color: rgb(0, 255, 0);
+    }
+    66% {
+        background-color: rgb(0, 0, 255);
+    }
+    100% {
+        background-color: rgb(255, 0, 0);
+    }
+}

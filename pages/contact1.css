@@ -1,0 +1,148 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../images/contact-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #333;
+    color: #fff;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    justify-content: space-between;
+    z-index: 10;
+}
+
+.user-icon {
+    width: 50px;
+    height: 50px;
+    margin-right: 20px;
+    border-radius: 50%;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+#time-display {
+    font-size: 1rem;
+    color: #fff;
+}
+
+nav {
+    background-color: #23272a;
+    width: 200px;
+    padding-top: 150px;
+    height: 100vh;
+    position: fixed;
+    left: 0;
+    top: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+nav ul {
+    list-style: none;
+    width: 100%;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px 20px;
+    display: block;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+nav a:hover {
+    background-color: #666;
+    border-radius: 5px;
+}
+
+.shop-button {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    background-color: #ff914d;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 90%;
+    margin-top: 20px;
+}
+
+.shop-button:hover {
+    background-color: #e5773e;
+}
+
+.button-icon {
+    width: 25px;
+    height: 25px;
+    margin-right: 10px;
+}
+
+main {
+    margin-left: 220px;
+    padding: 40px;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    width: 80%;
+    min-height: 100vh;
+}
+
+main h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.text-content {
+    margin-bottom: 20px;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+}
+
+.social-icon {
+    display: inline-block;
+    font-weight: bold;
+    font-size: 1.2rem;
+    color: #333;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 8px;
+    margin-right: 8px;
+    text-align: center;
+    width: 32px;
+    height: 32px;
+}
+
+.social-link:hover .social-icon {
+    background-color: #ddd;
+}

@@ -1,0 +1,157 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-image: url("../images/about-bot-background.jpg");
+    background-size: cover;
+    background-attachment: fixed;
+    color: black;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 
+        "header header header"
+        "sidebar main right-section";
+    height: 100vh;
+    gap: 10px;
+}
+
+header {
+    grid-area: header;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background: #3a3a3a;
+    color: #e0e0e0;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid #4a4a4a;
+}
+
+.title {
+    font-size: 24px;
+    font-weight: bold;
+    color: black;
+}
+
+.time {
+    font-size: 18px;
+    color: #b0b0b0;
+}
+
+.sidebar {
+    background: #2c2f33;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    border-radius: 8px;
+}
+
+.sidebar .button {
+    color: #ccc;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    background: #40444b;
+    border-radius: 5px;
+    text-align: center;
+    transition: background 0.3s;
+}
+
+.sidebar .button:hover {
+    background: #5865f2;
+}
+
+.social-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.right-section {
+    grid-area: right-section;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background: #2c2f33;
+    border-radius: 8px;
+}
+
+.avatar, .bot-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.shop-btn {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    background-color: rgba(201, 67, 18, 0.74);
+    color: black;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    width: 100%;
+    text-align: center;
+    justify-content: center;
+}
+
+.shop-btn:hover {
+    background-color: #d6560c;
+}
+
+.shop-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+main {
+    grid-area: main;
+    background: transparent;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+#Discord-Bot-Info h1,
+#Discord-Bot-Info h2,
+#Discord-Bot-Info h3,
+#Discord-Bot-Info h4 {
+    margin-bottom: 10px;
+    color: #121;
+}
+
+.text-content {
+    margin-bottom: 15px;
+    line-height: 1.8;
+    color: #5865f2;
+    text-align: justify;
+    text-indent: 20px;
+    padding: 10px 0;
+}
+
+.image-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.image-section img {
+    width: 200px;
+    height: auto;
+    border-radius: 5px;
+}
+
