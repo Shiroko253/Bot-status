@@ -194,6 +194,12 @@ main .text-content {
     color: #333;
 }
 
+.card h6 {
+    margin: 8px 0;
+    font-size: 1.4em;
+    color: #333;
+}
+
 .prev-btn, .next-btn {
     display: none;
 }
