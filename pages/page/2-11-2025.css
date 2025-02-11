@@ -1,0 +1,130 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('../../images/page-background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: #111;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background-color: #36393f;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    left: 200px;
+    width: calc(100% - 200px);
+    z-index: 1000;
+    white-space: nowrap;
+}
+
+header .user-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: 2px solid white;
+    margin-right: 15px;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 1.5em;
+    flex-shrink: 0;
+}
+
+header #time-display {
+    font-size: 0.9em;
+    margin-left: auto;
+    padding-left: 10px;
+    max-width: 150px;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+nav {
+    background-color: #333;
+    color: white;
+    width: 200px;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-direction: column;
+    padding-top: 20px;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin: 10px 0;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1em;
+    padding: 10px 15px;
+    display: block;
+    border-radius: 4px;
+}
+
+nav ul li a:hover {
+    background-color: #575757;
+}
+
+main {
+    padding: 100px 20px 20px;
+    max-width: 900px;
+    margin: 0 auto;
+    margin-left: 220px;
+    flex: 1;
+}
+
+main h2 {
+    font-size: 1.8em;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+main p {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+
+section h2 {
+    font-size: 1.8rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+section p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.8;
+}
