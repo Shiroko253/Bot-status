@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ShirokoHub</title>
+    <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
+    <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg" />
+    <link rel="shortcut icon" href="../../images/favicon.ico" />
+    <link rel="apple-touch-icon" sizes="180x180" href="../../images/apple-touch-icon.png" />
+    <link rel="manifest" href="../../images/site.webmanifest" />
+    <link rel="stylesheet" href="2-11-2025.css">
+</head>
+<body>
+    <header>
+        <img src="../../images/usericon.png" alt="我的個人頭像" class="user-icon">
+        <h1>2-11-2025</h1>
+        <div id="time-display">時間: <span id="current-time"></span></div>
+        <div id="bot-status">載入中...</div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="12-24-2024.html">前往上一個日常</a></li>
+            <li><a href="../daily.html">返回日常頁面</a></li>
+            <li><a href="../../index.html">返回主頁</a></li>
+        </ul>
+    </nav>
+    <main>
+        <section>     
+            <h2>
+                爲何停止更新網站許久
+            </h2>
+            <p>
+                <br>網頁的停止更新 不關我的事情
+                <br>主要原因是因爲 需要過年 整理自己的家還有處理家事 所以才沒有更新網站
+                <br>絕對不是我不想要更新 而是真的太忙了
+            </p>
+        </section>
+    </main>
+    <script>
+        function updateTime() {
+            const now = new Date();
+            const hours = now.getHours().toString().padStart(2, '0');
+            const minutes = now.getMinutes().toString().padStart(2, '0');
+            const seconds = now.getSeconds().toString().padStart(2, '0');
+            document.getElementById('current-time').textContent = `${hours}:${minutes}:${seconds}`;
+        }
+
+        function updateBotStatus() {
+            fetch("https://bot-status-production.up.railway.app/status")
+                .then(response => {
+                    if (!response.ok) throw new Error("API 無法訪問");
+                    return response.json();
+                })
+                .then(data => {
+                    const statusElement = document.getElementById("bot-status");
+                    if (data.bot_online) {
+                        statusElement.innerHTML = `🟢 機器人在線 - 正在服務 ${data.server_count} 個群組`;
+                    } else {
+                        statusElement.innerHTML = "🔴 機器人離線";
+                    }
+                })
+                .catch(() => {
+                    document.getElementById("bot-status").innerHTML = "⚠️ 無法連接到機器人狀態";
+                });
+        }
+
+        setInterval(updateTime, 1000);
+        setInterval(updateBotStatus, 10000);
+        window.onload = updateBotStatus;
+    </script>
+</body>
+</html>
