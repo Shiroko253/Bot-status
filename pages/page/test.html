@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bot 状态</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        .status {
+            font-size: 1.2em;
+            margin: 10px;
+        }
+        .online { color: green; }
+        .offline { color: red; }
+    </style>
+</head>
+<body>
+    <h1>Bot 状态</h1>
+    <div class="status">在线状态: <span id="online">加载中...</span></div>
+    <div class="status">服务器数量: <span id="servers">加载中...</span></div>
+    <div class="status">延迟: <span id="ping">加载中...</span> ms</div>
+
+    <script>
+        function fetchStatus() {
+            fetch("https://bot-status-production.up.railway.app/status")
+                .then(response => response.json())
+                .then(data => {
+                    const onlineEl = document.getElementById("online");
+                    onlineEl.innerText = data.bot_online ? "在线" : "离线";
+                    onlineEl.className = data.bot_online ? "online" : "offline";
+                    document.getElementById("servers").innerText = data.server_count;
+                    document.getElementById("ping").innerText = data.ping;
+                })
+                .catch(error => {
+                    console.error("获取状态失败:", error);
+                    document.getElementById("online").innerText = "错误";
+                    document.getElementById("servers").innerText = "错误";
+                    document.getElementById("ping").innerText = "错误";
+                });
+        }
+
+        // 每 5 秒刷新一次
+        setInterval(fetchStatus, 5000);
+        fetchStatus(); // 页面加载时立即获取
+    </script>
