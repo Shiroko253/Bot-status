@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShirokoHub</title>
+    <title>ShirokoHub - 2-11-2025</title>
     <link rel="icon" type="image/png" href="../../images/favicon-96x96.png" sizes="96x96" />
     <link rel="icon" type="image/svg+xml" href="../../images/favicon.svg" />
     <link rel="shortcut icon" href="../../images/favicon.ico" />
@@ -15,7 +15,7 @@
     <header>
         <img src="../../images/usericon.png" alt="我的個人頭像" class="user-icon">
         <h1>2-11-2025</h1>
-        <div id="time-display">時間: <span id="current-time"></span></div>
+        <div id="time-display">時間: <span id="current-time">載入中...</span></div>
         <div id="bot-status">載入中...</div>
     </header>
     <nav>
@@ -27,12 +27,10 @@
     </nav>
     <main>
         <section>     
-            <h2>
-                爲何停止更新網站許久
-            </h2>
+            <h2>為何停止更新網站許久</h2>
             <p>
                 <br>網頁的停止更新 不關我的事情
-                <br>主要原因是因爲 需要過年 整理自己的家還有處理家事 所以才沒有更新網站
+                <br>主要原因是因為 需要過年 整理自己的家還有處理家事 所以才沒有更新網站
                 <br>絕對不是我不想要更新 而是真的太忙了
             </p>
         </section>
@@ -47,7 +45,7 @@
         }
 
         function updateBotStatus() {
-            fetch("https://bot-status-production.up.railway.app/update_status")
+            fetch("https://bot-status-production.up.railway.app/status")
                 .then(response => {
                     if (!response.ok) throw new Error("API 無法訪問");
                     return response.json();
@@ -55,19 +53,25 @@
                 .then(data => {
                     const statusElement = document.getElementById("bot-status");
                     if (data.bot_online) {
-                        statusElement.innerHTML = `🟢 機器人在線 - 正在服務 ${data.server_count} 個群組`;
+                        statusElement.innerHTML = `🟢 在線 - 服務 ${data.server_count} 群組 (${data.ping}ms)`;
+                        statusElement.className = "online";
                     } else {
-                        statusElement.innerHTML = "🔴 機器人離線";
+                        statusElement.innerHTML = "🔴 離線";
+                        statusElement.className = "offline";
                     }
                 })
-                .catch(() => {
-                    document.getElementById("bot-status").innerHTML = "⚠️ 無法連接到機器人狀態";
+                .catch(error => {
+                    console.error("狀態更新失敗:", error);
+                    const statusElement = document.getElementById("bot-status");
+                    statusElement.innerHTML = "⚠️ 無法連接到狀態";
+                    statusElement.className = "error";
                 });
         }
 
+        updateTime();
+        updateBotStatus();
         setInterval(updateTime, 1000);
         setInterval(updateBotStatus, 10000);
-        window.onload = updateBotStatus;
     </script>
 </body>
 </html>
