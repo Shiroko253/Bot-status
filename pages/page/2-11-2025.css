@@ -58,6 +58,16 @@ header #time-display {
     text-overflow: ellipsis;
 }
 
+header #bot-status {
+    font-size: 0.9em;
+    padding-left: 10px;
+    max-width: 300px;
+    text-align: right;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
 nav {
     background-color: #333;
     color: white;
@@ -116,7 +126,6 @@ main p {
     text-align: justify;
 }
 
-
 section h2 {
     font-size: 1.8rem;
     color: #333;
@@ -128,3 +137,7 @@ section p {
     color: #555;
     line-height: 1.8;
 }
+
+.online { color: #00ff00; }
+.offline { color: #ff0000; }
+.error { color: #ffa500; }
