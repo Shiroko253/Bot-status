@@ -1,14 +1,30 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS
 import os
+import json
 
 app = Flask(__name__)
+CORS(app)
 
-# 存儲 bot 狀態
+STATUS_FILE = "bot_status.json"
+
 bot_status = {
     "bot_online": False,
     "server_count": 0,
     "ping": 0
 }
+
+def load_status():
+    global bot_status
+    if os.path.exists(STATUS_FILE):
+        with open(STATUS_FILE, "r") as f:
+            bot_status = json.load(f)
+
+def save_status():
+    with open(STATUS_FILE, "w") as f:
+        json.dump(bot_status, f)
+
+load_status()
 
 @app.route("/update_status", methods=["POST"])
 def update_status():
@@ -17,6 +33,7 @@ def update_status():
     if not data or not all(k in data for k in ["bot_online", "server_count", "ping"]):
         return jsonify({"error": "Invalid request"}), 400
     bot_status = data
+    save_status()
     return jsonify({"message": "Status updated"}), 200
 
 @app.route("/status", methods=["GET"])
